@@ -6,8 +6,8 @@ extends Node
 @onready var parentMainGodot: Node = get_parent()
 @onready var buton: Button = parentMainGodot.get_node("Button")
 
-# best practice signals
-# pode mitir o sinal para qualquer objeto pai ou filhos
+# good practice signals
+# pode emitir o sinal para qualquer objeto pai ou filhos
 signal signal_to_parent
 
 # o ready sempre e chamado no filho
