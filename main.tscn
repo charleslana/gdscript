@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://clodqwdu5htss"]
+
+[ext_resource type="Script" uid="uid://xv2xs7ngvhes" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://ie606wkqkddv" path="res://child.gd" id="2_0xm2m"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ig7tw")
+
+[node name="Child" type="Node" parent="."]
+script = ExtResource("2_0xm2m")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 57.0
+offset_top = 23.0
+offset_right = 213.0
+offset_bottom = 84.0
+focus_mode = 0
+
+[connection signal="signal_to_parent" from="Child" to="." method="_on_child_signal_to_parent"]
+[connection signal="pressed" from="Button" to="Child" method="on_custom_signal"]
